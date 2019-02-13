@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module type="plugin" name="epay">
+    <title>Epay.bg</title>
+    <summary>ePay.bg plugin for Subrion CMS</summary>
+    <author>Georgi Kolev</author>
+    <contributor>Georgi Kolev</contributor>
+    <version>4.1.0</version>
+    <date>2017-03-13</date>
+    <category>payments</category>
+    <compatibility>4.2.0</compatibility>
+
+    <config group="financial" name="epay" type="divider">ePay.bg</config>
+    <config group="financial" name="epay_demo_mode" type="radio" description="Demo mode" values="0,1">1</config>
+    <config group="financial" name="epay_api_user" type="text" description="API e-mail">info@example.com</config>
+	<config group="financial" name="epay_api_merchant_code" type="text" description="Merchant code">D99999999</config>
+	<config group="financial" name="epay_api_secret" type="text" description="API secret">5O0DGXN1QN28MLPSRD4E6FRLR2CYHG8355ZYAHSO0F1FY2K1V23H437W3JKEVWXH</config>
+	<config group="financial" name="epay_currency_code" type="text" description="ePay.bg currency">BGN</config>
+
+    <hooks>
+        <hook name="paymentButtons" type="smarty" filename="button.tpl" page_type="front"><![CDATA[]]></hook>
+    </hooks>
+
+    <pages>
+        <page url="ipn/epay/" name="ipn_epay" service="1">ePay.bg IPN</page>
+    </pages>
+
+    <phrases>
+        <phrase category="common" key="payment_completed">Payment is completed.</phrase>
+    </phrases>
+</module>
